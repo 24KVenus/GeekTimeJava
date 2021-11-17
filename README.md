@@ -1,2 +1,2 @@
-# GeetTimeJava
-GeetTime Java Course
+# GeekTimeJava
+GeekTime Java Course
