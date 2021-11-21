@@ -1,6 +1,7 @@
 package io.github.kimmking.gateway;
 
 
+import io.github.kimmking.gateway.geektime0328.inbound.netty.MyNettyHttpServer;
 import io.github.kimmking.gateway.inbound.HttpInboundServer;
 
 import java.util.Arrays;
@@ -22,13 +23,15 @@ public class NettyServerApplication {
 
 
         // 这是多个后端url走随机路由的例子
-        String proxyServers = System.getProperty("proxyServers","http://localhost:8801,http://localhost:8802");
-        int port = Integer.parseInt(proxyPort);
-        System.out.println(GATEWAY_NAME + " " + GATEWAY_VERSION +" starting...");
-        HttpInboundServer server = new HttpInboundServer(port, Arrays.asList(proxyServers.split(",")));
-        System.out.println(GATEWAY_NAME + " " + GATEWAY_VERSION +" started at http://localhost:" + port + " for server:" + server.toString());
+//        String proxyServers = System.getProperty("proxyServers","http://localhost:8801,http://localhost:8802");
+//        int port = Integer.parseInt(proxyPort);
+//        System.out.println(GATEWAY_NAME + " " + GATEWAY_VERSION +" starting...");
+//        HttpInboundServer server = new HttpInboundServer(port, Arrays.asList(proxyServers.split(",")));
+//        System.out.println(GATEWAY_NAME + " " + GATEWAY_VERSION +" started at http://localhost:" + port + " for server:" + server.toString());
+        MyNettyHttpServer server = new MyNettyHttpServer();
         try {
-            server.run();
+//        	server.run();
+            server.connect("http://localhost", 8088);
         }catch (Exception ex){
             ex.printStackTrace();
         }
