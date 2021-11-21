@@ -17,7 +17,7 @@ public class MyHeaderHttpRequestFilter implements MyHttpRequestFilter {
 		if(null == headers) {
 			headers = new DefaultHttpHeaders();
 		}
-		headers.set("geektime", "gt0328");	
+		headers.add("geektime", "gt0328");	
 	}
 
 	
