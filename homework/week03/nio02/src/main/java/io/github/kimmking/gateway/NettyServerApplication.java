@@ -31,7 +31,7 @@ public class NettyServerApplication {
         MyNettyHttpServer server = new MyNettyHttpServer();
         try {
 //        	server.run();
-            server.connect("http://localhost", 8088);
+            server.connect("http://localhost", 8888);
         }catch (Exception ex){
             ex.printStackTrace();
         }
