@@ -1,7 +1,19 @@
 package com.example.databasedemo.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name="order_status")
 public class DBDOrderStatusEntity extends DBDBaseEntity {
 	
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String statusCode;
 	private String statusName;

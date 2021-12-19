@@ -2,8 +2,18 @@ package com.example.databasedemo.entity;
 
 import java.math.BigDecimal;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="order_merchandise")
 public class DBDOrderMerchandiseEntity extends DBDBaseEntity {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private int orderId;
 	private int merchandiseId;
