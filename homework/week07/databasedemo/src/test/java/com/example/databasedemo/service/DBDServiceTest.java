@@ -91,7 +91,7 @@ public class DBDServiceTest {
 		
 		// 2021-12-19 21:23:25.684    2021-12-19 21:28:23.613
 		//线程600  数据库连接池hikari  minimum-idle: 5 maximum-pool-size: 610
-		ArrayList<DBDUserOrderEntity> list = generateOrdersArrayList(1000000);
+		ArrayList<DBDUserOrderEntity> list = generateOrdersArrayList(100);
 		ExecutorService eService = Executors.newFixedThreadPool(600);
 		System.out.println(formatter.format(new Date()));
 		for (DBDUserOrderEntity dbdUserOrderEntity : list) {

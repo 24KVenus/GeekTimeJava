@@ -29,17 +29,17 @@ public class DBDDataSourceConfig {
         return DataSourceBuilder.create().build();
     }
     
-    @Bean
-    public DataSource targetDataSource(@Qualifier("mainDataSource") DataSource mainDataSource, 
-    		@Qualifier("followDataSource") DataSource followDataSource) {
-    	Map<Object, Object> targetDataSource = new HashMap<>();
-    	targetDataSource.put(DBDDBSourceEnum.MAIN, mainDataSource);
-    	targetDataSource.put(DBDDBSourceEnum.FOLLOW, followDataSource);
-    	
-    	RouttingDataSource routtingDataSource = new RouttingDataSource();
-    	routtingDataSource.setTargetDataSources(targetDataSource);
-    	routtingDataSource.setDefaultTargetDataSource(mainDataSource);
-    	return routtingDataSource;
-    }
+//    @Bean
+//    public DataSource targetDataSource(@Qualifier("mainDataSource") DataSource mainDataSource, 
+//    		@Qualifier("followDataSource") DataSource followDataSource) {
+//    	Map<Object, Object> targetDataSource = new HashMap<>();
+//    	targetDataSource.put(DBDDBSourceEnum.MAIN, mainDataSource);
+//    	targetDataSource.put(DBDDBSourceEnum.FOLLOW, followDataSource);
+//    	
+//    	RouttingDataSource routtingDataSource = new RouttingDataSource();
+//    	routtingDataSource.setTargetDataSources(targetDataSource);
+//    	routtingDataSource.setDefaultTargetDataSource(mainDataSource);
+//    	return routtingDataSource;
+//    }
 	
 }
